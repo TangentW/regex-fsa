@@ -45,6 +45,8 @@ true false false
 let nfa = regex.as_nfa();
 ```
 
+![NFA](https://github.com/TangentW/regex-fsa/blob/894057457c65f4b8bf31ae035f0fa0a65925ea39/imgs/NFA.png)
+
 ### NFA 到 DFA：子集构造法
 第二部将 `NFA` 转换成 `DFA` (确定性有限自动机)，使用的是 `子集构造法 (Subset Construction)`，构造出如下的 `DFA`：
 
@@ -53,6 +55,8 @@ let nfa = regex.as_nfa();
 let dfa = nfa.as_dfa();
 ```
 
+![DFA](https://github.com/TangentW/regex-fsa/blob/894057457c65f4b8bf31ae035f0fa0a65925ea39/imgs/DFA.png)
+
 ### DFA 最小化：Hopcroft 算法
 使用 `Hopcroft 算法`，我们可以精简 `DFA`，使其状态数目最小化，最小化后的 `DFA`如下：
 
@@ -60,6 +64,8 @@ let dfa = nfa.as_dfa();
 // 通过 `Hopcroft 算法` 最小化 DFA
 let dfa = dfa.minimize();
 ```
+
+![M_DFA](https://github.com/TangentW/regex-fsa/blob/894057457c65f4b8bf31ae035f0fa0a65925ea39/imgs/M_DFA.png)
 
 ### 匹配
 至此，`DFA` 最终构建完毕，可以进行字符串匹配了：
