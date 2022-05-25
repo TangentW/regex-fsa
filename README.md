@@ -84,9 +84,11 @@ let is_matched = dfa
 println!("{}", is_matched);
 ```
 
-### 全部代码
+### 总结
 
 `Matcher` 可以理解为对以下代码的封装和运行：
+
+其中 `Regex`、`NFA` 和 `DFA` 逻辑可在对应模块中找到。
 
 ```Rust
 use regex_fsa::regex::Regex;
@@ -116,6 +118,6 @@ println!("{}", is_matched);
 
 ## TODO
 
-- [ ] 支持更多正则表达式（如 `[a-z]`）
+- [ ] 支持更多正则表达式（如 `[a-z]`、非贪婪匹配等）
 - [ ] 支持 Unicode 等字母表庞大的编码方式
 - [ ] 基于 DFA 实现词法分析器
